@@ -23,6 +23,7 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
+/*
 function game() {
     for (let i = 0; i < 5; i++) {
         let player = prompt(`Round ${i+1}- Choice: `).toLowerCase();
@@ -31,4 +32,6 @@ function game() {
     }
 }
 
+
 game()
+*/
