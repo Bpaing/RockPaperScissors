@@ -23,9 +23,19 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
+function playOnClick(e) {
+    const choice = this.textContent.toLowerCase();
+    const outcome = playRound(choice, computerPlay());
+
+    const result = document.querySelector('div.result');
+    console.log(result);
+    const p = document.createElement('p');
+    p.textContent = outcome;
+    result.appendChild(p);
+}
+
 const rps = document.querySelectorAll('button');
-rps.forEach(button => button.addEventListener('click', 
-    () => console.log(playRound(button.textContent.toLowerCase(), computerPlay()))));
+rps.forEach(button => button.addEventListener('click', playOnClick));
 
 /*
 function game() {
