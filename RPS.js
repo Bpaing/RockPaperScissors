@@ -23,6 +23,10 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
+const rps = document.querySelectorAll('button');
+rps.forEach(button => button.addEventListener('click', 
+    () => console.log(playRound(button.textContent.toLowerCase(), computerPlay()))));
+
 /*
 function game() {
     for (let i = 0; i < 5; i++) {
