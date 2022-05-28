@@ -54,13 +54,13 @@ function isGameOver() {
     const playerScore = parseInt(score.children[0].textContent.split(' ')[1]);
     const computerScore = parseInt(score.children[1].textContent.split(' ')[1]);
 
-    if (playerScore == 5 || computerScore == 5) 
+    if (playerScore == 5 || computerScore == 5) {
         return true;
+    } 
     return false;
 }
 
 function playOnClick() {
-    console.log(isGameOver())
     if (isGameOver()) { return; }
 
     const player = this.textContent.toLowerCase();
