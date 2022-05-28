@@ -27,11 +27,26 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
-function playOnClick(e) {
+function updateScore(result) {
+    if (result === 'draw') { return; }
+    const score = document.querySelector('ul.score');
+    const text = score.children;
+    if (result === 'win') {
+        let player = text[0].textContent.split(' ');
+        player[1] = `${parseInt(player[1]) + 1}`;
+        text[0].textContent = player.join(' ');
+    } else {
+        let computer = text[1].textContent.split(' ');
+        computer[1] = `${parseInt(computer[1]) + 1}`;
+        text[1].textContent = computer.join(' ');
+    }
+}
+
+function playOnClick() {
     const player = this.textContent.toLowerCase();
     const computer = computerPlay();
     const outcome = playRound(player, computer);
-
+    updateScore(outcome);
     const ul = document.createElement('ul');
     ul.className = 'result';
     const playerLi = document.createElement('li');
