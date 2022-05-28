@@ -27,22 +27,13 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
-function addContent(div, wins, losses) {
-    const ul = document.createElement('ul');
-    const win = document.createElement('li');
-    win.id = 'win';
-    const loss = document.createElement('li');
-    loss.id = 'loss';
-    ul.appendChild(win);
-    ul.appendChild(loss);
-}
-
 function playOnClick(e) {
     const player = this.textContent.toLowerCase();
     const computer = computerPlay();
     const outcome = playRound(player, computer);
 
     const ul = document.createElement('ul');
+    ul.className = 'result';
     const playerLi = document.createElement('li');
     playerLi.textContent = `You chose: ${player}`;
     const computerLi = document.createElement('li');
@@ -64,7 +55,7 @@ function playOnClick(e) {
 
     const scoreboard = document.querySelector('div.scoreboard');
     if (scoreboard.hasChildNodes()) {
-        scoreboard.replaceChild(ul, scoreboard.firstChild);
+        scoreboard.replaceChild(ul, scoreboard.lastChild);
     } else {
         scoreboard.appendChild(ul);
     }

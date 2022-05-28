@@ -1,0 +1,24 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-align: center;
+}
+
+body {
+    background-color: #151515;
+    color: #FFFFFF;
+}
+
+.choice,
+.score {
+    display:flex;
+    justify-content: center;
+    display:flex;
+    gap: 25px;
+    margin: 20px 0px;
+}
+
+.choice button {
+    padding: 5px 30px;
+}
