@@ -48,7 +48,16 @@ function playOnClick(e) {
     const computerLi = document.createElement('li');
     computerLi.textContent = `Computer chose: ${computer}`;
     const outcomeLi = document.createElement('li');
-    outcomeLi.textContent = outcome;
+    switch(outcome) {
+        case 'win':
+            outcomeLi.textContent = `${outcome}: ${player} beats ${computer}`;
+            break;
+        case 'loss':
+            outcomeLi.textContent = `${outcome}: ${computer} beats ${player}`;
+            break;
+        default:
+            outcomeLi.textContent = outcome;
+    }
     ul.appendChild(playerLi);
     ul.appendChild(computerLi);
     ul.appendChild(outcomeLi);
